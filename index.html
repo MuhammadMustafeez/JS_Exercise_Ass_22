@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
     <link rel="stylesheet" href="./index.css">
-    
 </head>
 <body>
     <div class="quiz_form">
-    <h1>Quiz Game</h1>
-    <div class="quiz">
-      <h2 id="question">Here is the question </h2>
-      <div id="answer_button">
-        <input type="button" class="btn" value="Answer1">
-        <input type="button" class="btn" value="Answer2">
-        <input type="button" class="btn" value="Answer3">
-        <input type="button" class="btn" value="Answer4">
-        <h5 id="score">Score Counter:</h5>
-        <input type="button" value="Next Question">
-      </div>
-    </div>
+        <h1>Quiz Game</h1>
+        <div class="quiz">
+            <h2 id="question">Here is the question</h2>
+            <div id="answer_button">
+                <!-- Changed input elements to button elements -->
+                <button class="btn" onmouseover="styleChange(this)" onmouseout="styleDefault(this)">Answer1</button>
+                <button class="btn" onmouseover="styleChange(this)" onmouseout="styleDefault(this)">Answer2</button>
+                <button class="btn" onmouseover="styleChange(this)" onmouseout="styleDefault(this)">Answer3</button>
+                <button class="btn" onmouseover="styleChange(this)" onmouseout="styleDefault(this)">Answer4</button>
+                <h5 id="score">Score Counter:</h5>
+                <button id="next-btn" class="next-btn">Next Question</button>
+            </div>
+        </div>
     </div>
     
     <script src="./index.js"></script>
