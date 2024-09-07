@@ -10,16 +10,17 @@
     <div class="quiz_form">
         <h1>Quiz Game</h1>
         <div class="quiz">
-            <h2 id="question">Here is the question</h2>
+            <!-- The question will be dynamically loaded here -->
+            <h2 id="question">Question will appear here</h2>
             <div id="answer_button">
-                <!-- Changed input elements to button elements -->
-                <button class="btn" onmouseover="styleChange(this)" onmouseout="styleDefault(this)">Answer1</button>
-                <button class="btn" onmouseover="styleChange(this)" onmouseout="styleDefault(this)">Answer2</button>
-                <button class="btn" onmouseover="styleChange(this)" onmouseout="styleDefault(this)">Answer3</button>
-                <button class="btn" onmouseover="styleChange(this)" onmouseout="styleDefault(this)">Answer4</button>
-                <h5 id="score">Score Counter:</h5>
-                <button id="next-btn" class="next-btn">Next Question</button>
+                <!-- Answer buttons will be dynamically created here by JavaScript -->
             </div>
+            <!-- Score Counter -->
+            <h5 id="score">Score: 0</h5>
+            <!-- Next Button, initially hidden -->
+            <button id="next-btn" class="nextbtn" style="display: none;">Next Question</button>
+
+            <button id="play-again-btn" class="nextbtn" style="display: none;">Play Again</button>
         </div>
     </div>
     

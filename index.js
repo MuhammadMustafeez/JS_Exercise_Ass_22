@@ -31,6 +31,8 @@ var questions = [
 var questionElement = document.getElementById("question");
 var answerButtons = document.getElementById("answer_button");
 var nextButton = document.getElementById("next-btn");
+var scoreCounter = document.getElementById("score");
+var playAgainButton = document.getElementById("play-again-btn");
 
 var currentQuestionIndex = 0;
 var score = 0;
@@ -38,7 +40,9 @@ var score = 0;
 function quizStart() {
     currentQuestionIndex = 0;
     score = 0;
-    nextButton.style.display = "none"; // Hide the Next button initially
+    nextButton.style.display = "none"; 
+    playAgainButton.style.display = "none";
+    scoreCounter.innerText = "Score: " + score; 
     loadQuestion();
 }
 
@@ -53,50 +57,47 @@ function loadQuestion() {
         button.innerHTML = answer.text;
         button.classList.add("btn");
 
-        // Add event listeners for hover effects
         button.onmouseover = function () { styleChange(button); };
         button.onmouseout = function () { styleDefault(button); };
 
-        // Set the correct answer data attribute
         if (answer.correct) {
             button.dataset.correct = answer.correct;
         }
 
-        // Add click event listener
         button.addEventListener("click", selectAnswer);
-
-        // Append button to the answer container
         answerButtons.appendChild(button);
     });
 }
 
 function resetState() {
-    nextButton.style.display = "none"; // Hide the Next button
+    nextButton.style.display = "none"; 
     while (answerButtons.firstChild) {
-        answerButtons.removeChild(answerButtons.firstChild);
+        answerButtons.removeChild(answerButtons.firstChild); 
     }
 }
 
 function selectAnswer(e) {
     var selectedBtn = e.target;
     var isCorrect = selectedBtn.dataset.correct === "true";
-    console.log(`Button clicked: ${selectedBtn.innerHTML}. Correct: ${isCorrect}`); // Debugging
 
     if (isCorrect) {
         selectedBtn.classList.add("correct");
+        score++;  
+        scoreCounter.innerText = "Score: " + score;
     } else {
         selectedBtn.classList.add("incorrect");
     }
-    Array.from(answerButtons.children).forEach(button =>{
-        if(button.dataset.correct === "true"){
-           button.classList.add("correct");
+
+    Array.from(answerButtons.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct");
         }
-        button.disabled = true;
+        button.disabled = true;  
     });
-    nextButton.style.display="block";
+
+    nextButton.style.display = "block"; 
 }
 
-// Functions to handle hover effects
 function styleChange(e) {
     e.style.background = "black";
     e.style.color = "white";
@@ -108,16 +109,16 @@ function styleDefault(e) {
     e.style.color = "black";
 }
 
-function nextStyle(e) {
-    e.style.background = "#1230AE";
-    e.style.color = "white";
-    e.style.fontWeight = "600";
-}
-
-function nextStyleDefault(e) {
-    e.style.background = "#273adc";
-    e.style.color = "white";
-}
-
-// Initialize the quiz
+// Handling Next Button Click
+nextButton.addEventListener("click", () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+    } else {
+        questionElement.innerText = "Quiz Completed! Your final score is: " + score;
+        nextButton.style.display = "none"; 
+        playAgainButton.style.display = "block"; 
+    }
+});
+playAgainButton.addEventListener("click", quizStart);
 quizStart();
