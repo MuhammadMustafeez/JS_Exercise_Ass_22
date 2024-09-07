@@ -82,10 +82,12 @@ function selectAnswer(e) {
 
     if (isCorrect) {
         selectedBtn.classList.add("correct");
+        alert("correct")
         score++;  
         scoreCounter.innerText = "Score: " + score;
     } else {
         selectedBtn.classList.add("incorrect");
+        alert("incorrect");
     }
 
     Array.from(answerButtons.children).forEach(button => {
