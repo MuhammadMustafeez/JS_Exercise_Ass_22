@@ -1,4 +1,3 @@
-/* Reset styles and set box-sizing */
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +5,10 @@
     box-sizing: border-box;
 }
 
-/* Body background */
 body {
     background-color: #2c6687b1;
 }
 
-/* Quiz form container */
 .quiz_form {
     background: transparent;
     border: solid white;
@@ -22,7 +19,6 @@ body {
     border-radius: 10px;
 }
 
-/* Quiz title */
 .quiz_form h1 {
     font-size: 25px;
     color: #F5F5DC;
@@ -33,7 +29,6 @@ body {
     justify-content: center;
 }
 
-/* Question text */
 .quiz h2 {
     font-size: 19px;
     color: #ffffff;
@@ -41,7 +36,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Answer buttons */
 .btn {
     background-color: rgb(241, 234, 234);
     color: rgb(26, 25, 25);
@@ -56,7 +50,6 @@ body {
     border-radius: 10px;
 }
 
-/* Score display */
 #score {
     font-size: 15px;
     color: #fff;
@@ -65,7 +58,6 @@ body {
     justify-content: center;
 }
 
-/* Next question button */
 .nextbtn {
     background-color: rgb(39, 58, 220);
     color: #fff;
@@ -76,28 +68,24 @@ body {
     margin: 20px auto 0;
     border-radius: 4px;
     cursor: pointer;
-    display: none; /* Hidden by default */
+    display: none;
     text-align: center;
 }
 
-/* Correct answer button style */
 .correct {
     background: #9aeabc !important;
 }
 
-/* Incorrect answer button style */
 .incorrect {
     background: #ff9393 !important;
 }
 
-/* Hover effects for answer buttons */
 .btn:hover {
     background-color: black;
     color: white;
     font-weight: bold;
 }
 
-/* Hover effect for next button */
 .nextbtn:hover {
     background-color: #1230AE;
 }

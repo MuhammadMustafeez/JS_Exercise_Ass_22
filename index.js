@@ -32,7 +32,7 @@ var questionElement = document.getElementById("question");
 var answerButtons = document.getElementById("answer_button");
 var nextButton = document.getElementById("next-btn");
 var scoreCounter = document.getElementById("score");
-var playAgainButton = document.getElementById("play-again-btn");
+var playAgainButton = document.getElementById("playagain_btn");
 
 var currentQuestionIndex = 0;
 var score = 0;
